@@ -1,0 +1,15 @@
+/* map.module.css */
+.mapContainer {
+  display: flex;
+  position: relative;
+}
+
+.map {
+  flex: 1;
+}
+
+.container {
+  background-color: #f7f7f7;
+  border: solid 1px lightgray;
+  width: 100px; /* Adjust the width as needed */
+}

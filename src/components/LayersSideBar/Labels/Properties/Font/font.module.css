@@ -1,0 +1,29 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  width: 100%;
+}
+.listItem {
+  list-style-type: none;
+  cursor: pointer;
+  border: solid #e5e5fa 1px;
+  padding: 5px;
+}
+
+.selectedListItem {
+  list-style-type: none;
+  cursor: pointer;
+  border: solid #e5e5fa 1px;
+  background-color: #e5e5fa;
+  padding: 5px;
+}
+
+.listItem:hover {
+  background-color: #e5e5fa;
+  border: solid lightgray 1px;
+}
+.heading {
+  font-weight: bold;
+  padding: 5%;
+}

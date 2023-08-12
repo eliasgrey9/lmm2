@@ -1,0 +1,26 @@
+.body {
+  display: flex;
+  justify-content: space-evenly;
+}
+.heading {
+  font-weight: bold;
+  padding: 5%;
+}
+.checkboxAndLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boldIcon {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.underlineIcon {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+.italicIcon {
+  font-style: italic;
+  margin-bottom: 5px;
+}
