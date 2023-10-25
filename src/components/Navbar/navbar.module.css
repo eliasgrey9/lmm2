@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 35%;
+  width: 15%;
 }
 
 @media (max-width: 900px) {

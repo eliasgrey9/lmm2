@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./toolbar.module.css";
-import { PiArrowCounterClockwiseThin, PiExportBold } from "react-icons/pi";
+import { PiExportBold } from "react-icons/pi";
 import { BsLock, BsUnlock } from "react-icons/bs";
 import { AiOutlineAim } from "react-icons/ai";
 

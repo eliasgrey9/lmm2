@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./layersSideBar.module.css";
 import LinePropertiesPanel from "./Lines/PropertiesPanel";
 import LabelPropertiesPanel from "./Labels/PropertiesPanel";
+import { BiSolidPencil } from "react-icons/bi";
 
 const LayersSideBar = ({
   handleLineChange,
@@ -23,6 +24,14 @@ const LayersSideBar = ({
     useState(false);
 
   const [selectedLayer, setSelectedLayer] = useState("roads");
+  const [currentLineColors, setCurrentLineColors] = useState([]);
+
+  useEffect(() => {
+    const updatedColors = lineStateArr.map((layer) => ({
+      layer: layer.state,
+    }));
+    setCurrentLineColors(updatedColors);
+  }, [lineStateArr]);
 
   const showLayer = (layer) => {
     setShowModifyLayerContainer(true);
@@ -32,6 +41,7 @@ const LayersSideBar = ({
     setShowModifyLayerContainer(false);
   };
 
+  console.log("CurrentLineColors", currentLineColors);
   return (
     <>
       <div className={style.body}>
@@ -63,7 +73,20 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("roads")}
                 >
-                  Layer Icons
+                  {currentLineColors.length
+                    ? currentLineColors.map((layer) => {
+                        if (layer.name === "roads") {
+                          <div
+                            key={layer.layer}
+                            style={{ backgroundColor: layer.color }}
+                          ></div>;
+                        } else {
+                          return null;
+                        }
+                      })
+                    : null}
+
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -78,7 +101,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("traffic")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -93,7 +116,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("ocean bathymetry")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -106,7 +129,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("water")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -121,7 +144,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("waterway")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -136,7 +159,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("country border")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -151,7 +174,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("terrain contour")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -166,7 +189,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("terrain hillshade")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
               <div
@@ -181,7 +204,7 @@ const LayersSideBar = ({
                   className={style.layerIcons}
                   onClick={() => showLayer("land cover")}
                 >
-                  Layer Icons
+                  <BiSolidPencil />
                 </div>
               </div>
             </div>
@@ -198,7 +221,7 @@ const LayersSideBar = ({
                 className={style.layerIcons}
                 onClick={() => showLayer("roads")}
               >
-                Layer Icons
+                <BiSolidPencil />
               </div>
             </div>
             <div
@@ -211,7 +234,7 @@ const LayersSideBar = ({
                 className={style.layerIcons}
                 onClick={() => showLayer("places")}
               >
-                Layer Icons
+                <BiSolidPencil />
               </div>
             </div>
             <div
@@ -224,7 +247,7 @@ const LayersSideBar = ({
                 className={style.layerIcons}
                 onClick={() => showLayer("natural")}
               >
-                Layer Icons
+                <BiSolidPencil />
               </div>
             </div>
             <div
@@ -239,7 +262,7 @@ const LayersSideBar = ({
                 className={style.layerIcons}
                 onClick={() => showLayer("points of interest")}
               >
-                Layer Icons
+                <BiSolidPencil />
               </div>
             </div>
           </div>

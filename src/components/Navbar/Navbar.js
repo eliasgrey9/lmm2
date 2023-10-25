@@ -22,23 +22,6 @@ const Navbar = ({ userSignedIn, setUserSignedIn, userId, onUserFilesPage }) => {
       <div className={style.rightSideOfNav}>
         {!userSignedIn ? (
           <>
-            <Link
-              className={style.suggestions}
-              target="_blank"
-              to={`https://forms.gle/4PTtxuK82oSFphpk9`}
-            >
-              <div>Feedback</div>
-            </Link>
-            {userId ? (
-              <Link className={style.suggestions} to={`/about/${userId}`}>
-                <div>About</div>
-              </Link>
-            ) : (
-              <Link className={style.suggestions} to={`/about/`}>
-                <div>About</div>
-              </Link>
-            )}
-
             <Link className={style.suggestions} to={`/signIn/`}>
               <div>Sign In</div>
             </Link>
